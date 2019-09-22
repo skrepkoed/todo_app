@@ -11,9 +11,6 @@ end
 
 def new
 
-
-
-
 end
 def create
 @todolist=Todolist.create(params_todolist)
@@ -62,10 +59,13 @@ respond_to do |format|
 end
 end
 
-def show
+def color_picker
+respond_to do |format|               
+
+    format.js
 
 
-
+end
 end
 private
 def params_todolist

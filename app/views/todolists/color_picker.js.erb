@@ -1,0 +1,41 @@
+
+
+$(document).ready(function() {
+  
+  
+
+  $('.color_picker').bind("ajax:complete", function(event){
+
+  
+  
+ 
+    
+    
+		if($('.colors').length===0){  
+		  $(this).closest('.links').append('<%=j render  partial: "color_picker" %>');
+
+		  }else{
+		  	$('.colors').remove()
+
+		  }
+
+
+		  })
+			
+ 	
+
+			
+
+	
+	 
+		  
+		} 
+		
+		)
+
+
+		  
+	
+	  
+  
+	

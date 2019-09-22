@@ -1,6 +1,7 @@
 
 <div class='links'>
       <%= link_to_add_association (tag.span '', class: %w( icon-plus )   ), f, :todoitems %>
-	  <%= link_to  (tag.span '', class: %w( icon-pencil2 )), "#" ,onclick:"return false;" %>
-	  <%= render "color_picker" %>
+	  <%= link_to  (tag.span '', class: %w( icon-pencil2 )), color_picker_todolists_path, remote:true, method: "get", class: "color_picker"  %>
+
+	  
     </div>

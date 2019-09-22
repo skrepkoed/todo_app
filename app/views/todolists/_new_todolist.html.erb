@@ -1,0 +1,13 @@
+<li>
+
+<p><%= todolist.title %></p>
+<p><%= todolist.description %></p>
+<p><% todolist.todoitems.each do |item| %></p>
+<p><%= item.description %></p>
+<p><%= item.done %></p>
+
+<%= link_to 'Edit task', edit_todolist_path(item.id)%>|
+<%= link_to 'Delete task', todolist, method: :delete %>
+<%end%>
+
+</li>

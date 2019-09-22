@@ -1,0 +1,33 @@
+
+
+
+
+
+<% @columns.each do |k, v| %>
+<div class="<%= k%> column ">
+<% v.each do |item|  %>
+
+<div id=<%=item.id%> class="todolist1 <%= item.color%>">
+
+
+<p><%= item.title%>  </p>
+<p><%= item.description %></p>
+<p><% item.todoitems.each do|i|%></p>
+<p>
+<%if i.done %>
+<span class="icon-checkbox-checked"></span>
+<%else%>
+<span class="icon-checkbox-unchecked"></span>
+<%end%>
+<%= i.description %>
+</p>
+<%end%>
+<%= link_to  item,  class: "delete",  method: :delete,  remote: true  do %>
+<span class="icon-cross"></span>
+<%end%>
+
+<%= button_to 'Edit task', edit_todolist_path(item.id), remote:true, method: "get",  form_class: "edit" %>
+</div>
+<%end%>
+</div>
+<%end%>

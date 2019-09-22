@@ -1,0 +1,28 @@
+<h1>Edit</h1>
+
+<%= form_with( model: todoitem_setup(@todolist), local: true) do |f| %>
+<p>
+		<%= f.label :title %><br />
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :description %><br />
+		<%= f.text_area :description %>
+	</p>
+	<p>
+	<div id='todoitems'>
+    <%= f.fields_for :todoitems do |todoitem| %>
+      <%= render 'todoitem_fields', :f => todoitem %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add todoitem', f, :todoitems %>
+    </div>
+  </div>
+	</p>
+	
+	<p>
+		<%= f.submit 'Edit todolist' %>
+	</p>
+
+<%end%>

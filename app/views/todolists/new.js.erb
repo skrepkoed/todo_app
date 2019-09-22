@@ -1,0 +1,27 @@
+
+
+$(document).ready(function() {
+	
+  alert('Hi');
+	  
+	  if ($('.newform').length!==0){
+		  
+    $('[data-js-show-link]').on("ajax:success", function(event){
+	$('.newform').remove();
+	});
+	  }
+	  else{
+		  
+		  $('[data-js-show-link]').on("ajax:success", function(event){
+		  $('#new').append('<%=j render  partial: "new"  %>');
+		  
+	});
+	  
+  }
+  
+
+});
+
+
+  
+

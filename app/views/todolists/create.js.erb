@@ -1,0 +1,30 @@
+$(document).ready(function() {
+   
+  
+  $('[data-js-new-form]').bind("ajax:success", function(){
+  
+ 
+    
+	
+	 
+		  
+    
+		  $('#new' ).html('<%=j render  partial: "new"  %>');
+		  $('#list').html('<%=j render  partial: "index" %>');
+		  
+		  /*$('#list div:nth-child(1)').hide().fadeIn("slow");*/
+		  
+	
+	  
+  
+	
+	
+	
+	});
+  
+
+
+
+
+});
+

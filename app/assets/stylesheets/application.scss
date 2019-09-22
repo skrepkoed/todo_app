@@ -1,0 +1,208 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require icomoon_rails
+ */
+@import "bootstrap";
+.container{
+	max-width: 1080px;
+margin:auto;
+	
+	
+}
+
+#list{
+
+/*display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-template-rows: repeat(auto-fit, minmax(200px, auto));
+grid-auto-flow: dense;
+grid-gap: 1.5em;
+*/
+
+
+padding: 10px;
+
+}
+.column{
+	width: 250px;
+	display:inline-flex;
+	
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+	
+}
+
+.column:not(:last-child){
+	
+	margin-right:0.25em;
+	
+}
+
+
+.todolist1{
+	
+	min-width: 200px;
+	border: 5px dashed green;
+	margin-top: 20px ;
+	flex:1;
+	/*text-align:center;
+	padding:10px;*/
+	display:flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+    
+}
+.todolist1:hover span{
+	
+	visibility:visible;
+	
+}
+.todolist1 p{
+	margin:0px;
+	
+}
+.todolist1 .edit input{
+	display:none;
+	
+}
+
+#new{
+	border: 10px dashed red;
+	padding: 20px 50px;
+}
+.newform form {
+	display:flex;
+	flex-direction:column;
+	align-content:center;
+}
+.editform form{
+	padding:10px;
+	display:flex;
+	flex-direction:column;
+	align-content:center;
+}
+.nested-fields{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:space-around;
+	
+}
+
+.newform .nested-fields textarea{
+	flex:1;
+	margin-bottom:10px;
+	
+}
+a,a:hover {
+	text-decoration:none;
+	color:inherit;
+}
+
+.delete span{
+	margin-left:220px;
+	font-size:5px;
+	visibility:hidden;
+}
+
+
+
+.icon-plus:hover::before{
+	
+	content: "\ea0a Add todoitem"
+	
+}
+[class^="icon-"]::before{
+	color: #343a40;
+	font-size:25px;
+}
+.icon-cross:before {
+  content: "\ea0f";
+  font-size:15px;
+  margin-left:5px;
+  
+}
+.icon-checkbox-checked,.icon-checkbox-unchecked{
+	letter-spacing: 5px;
+	
+}
+
+.nested-fields input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+ .nested-fields input[type=checkbox] + label:before {
+  font-family:'icomoon' ;
+  display: inline-block;
+}
+
+.newform .nested-fields input[type=checkbox] + label{
+	content:"";
+}
+.newform .nested-fields input[type=checkbox] + label:before { content: "\ea53"; } /* unchecked icon */
+.newform .nested-fields input[type=checkbox] + label:before { letter-spacing: 5px; } /* space between checkbox and label */
+
+.newform .nested-fields input[type=checkbox]:checked + label:before { content: "\ea52";} /* checked icon */
+.newform .nested-fields input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
+
+
+
+ 
+
+ .nested-fields input[type=checkbox] + label:before { content: "\ea53"; } /* unchecked icon */
+ .nested-fields input[type=checkbox] + label:before { letter-spacing: 5px; } /* space between checkbox and label */
+
+ .nested-fields input[type=checkbox]:checked + label:before { content: "\ea52";} /* checked icon */
+ .nested-fields input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
+.links{
+	display:flex;
+	justify-content:space-around;
+	align-content:center;
+}
+.colors{
+	display:none;
+	justify-content:space-around;
+	align-content:center;
+}
+ .colors input[type=radio]{
+	display:none;
+	
+}
+.colors input[type=radio]+label {
+	content:"";
+	margin-bottom:0px;
+	 width: 25px;
+	 height: 25px;
+	border-radius:50%;
+  
+}
+.colors input[type=radio]:checked+label{
+  width: 35px;
+	 height: 35px;
+}
+.yellow{
+	background-color: #ffff80;
+}
+.red{
+	background-color: #ff9980;
+	color:white;
+}
+.green{
+	background-color: #99e699;
+}
+.purple{
+	background-color: #ecb3ff;
+}
+.blue{
+	background-color: #b3d9ff;
+}

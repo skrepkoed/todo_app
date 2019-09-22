@@ -1,0 +1,32 @@
+<div class="newform">
+
+
+<%= form_with model: @todolist, method: "post", data: {'js-new-form' => true} do |f| %>
+
+
+		
+		<%= f.text_field :title %>
+	
+
+	
+		
+		<%= f.text_area :description %>
+	
+	
+	<div id='todoitems'>
+    <%= f.fields_for :todoitems do |todoitem| %>
+      
+    <% end %>
+    <%= render 'links', :f => f%>
+  </div>
+	
+	
+
+	
+		
+		<%= button_tag 'Create Todolist', type: 'submit' , class:'btn btn-outline-dark'%>
+	
+
+<%end%>
+
+</div>

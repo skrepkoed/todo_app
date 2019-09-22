@@ -1,0 +1,15 @@
+
+
+
+
+	
+	
+	$('#'+('<%= params[:id]%>')).fadeOut();
+	
+$(document).ready(function() {
+$('#list').hide()
+$('#list').html('<%=j render  partial: "index" %>');
+$('#list .todolist1').hide()
+$('#list').show()
+$('#list .todolist1').fadeIn('slow');
+	})

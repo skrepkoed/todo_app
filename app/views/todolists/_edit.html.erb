@@ -1,0 +1,26 @@
+<div class="editform">
+<%= form_with( model: todoitem_setup(todolist), data: {'js-update-form' => true} ) do |f| %>
+
+		
+		<%= f.text_field :title %>
+		
+		<%= f.text_area :description %>
+	
+	
+	<div id='todoitems_edit'>
+	
+    <%= f.fields_for :todoitems do |todoitem| %>
+	
+      <%= render 'todoitem_fields', :f => todoitem %>
+    <% end %>
+	
+    <%= render 'links', :f => f%>
+  </div>
+	
+	
+	
+		<%= button_tag 'Edit Todolist', type: 'submit' , class:'btn btn-outline-dark'%>
+	
+
+<%end%>
+</div>

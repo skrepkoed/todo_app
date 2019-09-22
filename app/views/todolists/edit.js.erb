@@ -1,0 +1,30 @@
+
+$(document).ready(function() {
+   
+  
+  $('.edit').bind("ajax:success", function(){
+  
+ 
+    
+	
+	 
+		  
+    
+		  
+		  $(this).closest('div').html('<%=j render  partial: "edit", locals: {todolist: @todolist} %>');
+			$('.editform').hide().fadeIn("slow");
+			$('.editform').closest('.column').css("width","auto");
+		  
+	$('.edit input').prop("disabled", true);
+	  
+  
+	
+	
+	
+	});
+  
+
+
+
+
+});

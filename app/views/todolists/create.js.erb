@@ -12,6 +12,11 @@ $(document).ready(function() {
 		  $('#new' ).html('<%=j render  partial: "new"  %>');
 		  $('#list').html('<%=j render  partial: "index" %>');
 		  
+		  $('.container #todolist_title').on('click', function(event){
+
+$('.spoiler').css('display','flex').fadeIn('slow');
+
+})
 		  /*$('#list div:nth-child(1)').hide().fadeIn("slow");*/
 		  
 	

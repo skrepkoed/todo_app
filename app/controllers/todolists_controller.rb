@@ -98,7 +98,7 @@ end
 
 end
 def list
-@todolists=Todolist.all.order( created_at: :desc)
+@todolists=Todolist.where(done: true).order( created_at: :desc)
 four_columns(@todolists)
 	end
 def set_todolist

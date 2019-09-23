@@ -10,7 +10,7 @@ $(event.target).parent().find(".edit input").trigger("click");
 		
 	}
 });
-$('#todolist_title').on('click', function(event){
+$('.container #todolist_title').on('click', function(event){
 
 $('.spoiler').css('display','flex').fadeIn('slow');
 

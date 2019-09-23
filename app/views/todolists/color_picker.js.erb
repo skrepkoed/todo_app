@@ -4,20 +4,14 @@ $(document).ready(function() {
   
   
 
-  $('.color_picker').bind("ajax:complete", function(event){
+  $('.color_picker').bind("ajax:success", function(event){
+  	
 
-  
-  
- 
     
-    
-		if($('.colors').length===0){  
+		  
 		  $(this).closest('.links').append('<%=j render  partial: "color_picker" %>');
 
-		  }else{
-		  	$('.colors').remove()
-
-		  }
+		  $('.color_picker').attr('class','color_picker_cleaner')
 
 
 		  })
@@ -29,10 +23,14 @@ $(document).ready(function() {
 	
 	 
 		  
-		} 
-		
-		)
+		})
 
+		$('.color_picker_cleaner').bind("ajax:success", function(event){
+		
+		  	$('.colors').remove();
+		  	$('.color_picker_cleaner').attr('class','color_picker')
+
+			})		  
 
 		  
 	

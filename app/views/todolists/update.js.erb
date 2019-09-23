@@ -14,6 +14,7 @@
 		  $('#list').html('<%=j render  partial: "index" %>');
 		  $('#'+('<%= params[:id]%>')).hide().slideDown("slow");
 		  $('.edit input').prop("disabled", false);
+		  $('.newform #todolist_done').attr('id','todolist_done')
 	
 	  
   

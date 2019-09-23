@@ -1,5 +1,5 @@
 class TodolistsController < ApplicationController
-before_action :four_columns, :set_todolist, only: :index
+before_action :list, :set_todolist, only: :index
 after_action :set_todolist, only: :create #delete later
 
 def index 
@@ -15,7 +15,7 @@ end
 def create
 @todolist=Todolist.create(params_todolist)
 set_todolist
-four_columns
+list
 respond_to do |format|
 
 format.js   
@@ -36,7 +36,7 @@ end
 
 def update
 @todolist=Todolist.find(params[:id]).update(params_todolist)
-four_columns
+list
 respond_to do |format|
 
 format.js   
@@ -49,7 +49,7 @@ def destroy
 
 @todolist=Todolist.find(params[:id]).destroy
 
-four_columns
+list
 respond_to do |format|               
 
     format.js
@@ -70,18 +70,20 @@ end
 private
 def params_todolist
 
-params.require(:todolist).permit(:title, :description, :color, :todoitems_attributes =>[:id, :description,  :done,:_destroy])
+params.require(:todolist).permit(:title, :description, :color, :done, :todoitems_attributes =>[:id, :description,  :done,:_destroy])
 end
 
-def four_columns
-@todolists=Todolist.all.order( created_at: :desc)
+def four_columns(todolists)
+
 @columns=Hash.new{|hash,key| hash[key]=[]}
-@columns['first']
-@columns['second']
-@columns['third']
-@columns['fourth']
-until @todolists.empty?
-first=@todolists.first(4)
+columns_number=['first','second','third','fourth']
+
+
+columns_number.each do |i|
+	@columns[i]
+end
+until todolists.empty?
+first=todolists.first(4)
 
 i=0
 @columns.each_key do |k|
@@ -90,11 +92,15 @@ if i<first.length
 i=i+1
 end
 end
-@todolists=@todolists-first
+todolists=todolists-first
 end
 @columns
 
 end
+def list
+@todolists=Todolist.all.order( created_at: :desc)
+four_columns(@todolists)
+	end
 def set_todolist
 @todolist=Todolist.new
 @todolist.todoitems.build

@@ -1,6 +1,8 @@
 
 <div class='links'>
       <%= link_to_add_association (tag.span '', class: %w( icon-plus )   ), f, :todoitems %>
+      	<%= f.check_box :done, class: %w( pushpin_box )%>
+      <label class='icon-pushpin' for='todolist_done'></label>
 	  <%= link_to  (tag.span '', class: %w( icon-pencil2 )), color_picker_todolists_path, remote:true, method: "get", class: "color_picker"  %>
 
 	  

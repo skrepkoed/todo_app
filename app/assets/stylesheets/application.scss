@@ -94,6 +94,12 @@ padding: 10px;
 	flex-direction:column;
 	align-content:center;
 }
+.spoiler{
+display: none;
+
+	flex-direction:column;
+	align-content:center;
+}
 .nested-fields{
 	display:flex;
 	flex-direction:row;
@@ -124,6 +130,21 @@ a,a:hover {
 	
 	content: "\ea0a Add todoitem"
 	
+}
+ .pushpin_box{
+display: none;
+}
+ .icon-pushpin:hover::before{
+	content: "\e946 Pin todolist"
+
+}
+#todolist_done:checked +.icon-pushpin:hover::before{
+	content: "\e946  Todolist pined"
+
+}
+.icon-pencil2:hover::before{
+	content: "\e906 Pick color"
+
 }
 [class^="icon-"]::before{
 	color: #343a40;
@@ -206,3 +227,4 @@ a,a:hover {
 .blue{
 	background-color: #b3d9ff;
 }
+

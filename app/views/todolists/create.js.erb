@@ -10,7 +10,8 @@ $(document).ready(function() {
 		  
     
 		  $('#new' ).html('<%=j render  partial: "new"  %>');
-		  $('#list').html('<%=j render  partial: "index" %>');
+		  $('#list .pined').html('<%=j render  partial: "index", locals: {columns: @list[1]} %>');
+		  $('#list .unpined').html('<%=j render  partial: "index", locals: {columns: @list[0]} %>');
 		  
 		  $('.container #todolist_title').on('click', function(event){
 
@@ -22,7 +23,7 @@ $('.spoiler').css('display','flex').fadeIn('slow');
 	
 	  
   
-	
+	pin()
 	
 	
 	});

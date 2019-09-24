@@ -98,8 +98,12 @@ end
 
 end
 def list
-@todolists=Todolist.where(done: true).order( created_at: :desc)
-four_columns(@todolists)
+	@list=[]
+@todolists=Todolist.where(done: false).order( created_at: :desc)
+@todolists_pined=Todolist.where(done: true).order( created_at: :desc)
+@list<<four_columns(@todolists)
+@list<<four_columns(@todolists_pined)
+@list
 	end
 def set_todolist
 @todolist=Todolist.new

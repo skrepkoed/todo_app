@@ -18,5 +18,9 @@
 //= require turbolinks
 //= require cocoon
 //= require_tree .
-
-
+let pin= function(){
+	console.log($('.pined .column .todolist1 ').length)
+if($('.pined .column .todolist1 ').length==0 ){
+	$('h4').hide()
+}else{$('h4').show()}
+}

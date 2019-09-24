@@ -8,8 +8,10 @@
 	
 $(document).ready(function() {
 $('#list').hide()
-$('#list').html('<%=j render  partial: "index" %>');
+$('#list .pined').html('<%=j render  partial: "index", locals: {columns: @list[1]} %>');
+$('#list .unpined').html('<%=j render  partial: "index", locals: {columns: @list[0]} %>');
 $('#list .todolist1').hide()
 $('#list').show()
 $('#list .todolist1').fadeIn('slow');
+pin()
 	})

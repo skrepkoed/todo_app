@@ -11,10 +11,12 @@
 		  
 		  
 		  
-		  $('#list').html('<%=j render  partial: "index" %>');
+		  $('#list .pined').html('<%=j render  partial: "index", locals: {columns: @list[1]} %>');
+		  $('#list .unpined').html('<%=j render  partial: "index", locals: {columns: @list[0]} %>');
 		  $('#'+('<%= params[:id]%>')).hide().slideDown("slow");
 		  $('.edit input').prop("disabled", false);
 		  $('.newform .pushpin_box').attr('id','todolist_done')
+		  pin()
 	
 	  
   

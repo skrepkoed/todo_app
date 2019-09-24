@@ -17,6 +17,8 @@ $('.spoiler').css('display','flex').fadeIn('slow');
 })
 
 
+pin()
+
 
 
 });

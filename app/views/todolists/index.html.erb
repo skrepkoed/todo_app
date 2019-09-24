@@ -6,9 +6,18 @@
 
 <%= render "new"%>
 </div>
-<br/>
+
+<h4>Pined todolists</h4>
 <div id="list">
-<%= render "index"%>
+
+<div class='pined'>
+
+<%= render partial: "index" ,locals: {columns: @list[1]}%>	
+</div>
+<br/>
+<div class="unpined">
+<%= render partial: "index" ,locals: {columns: @list[0]}%>
+</div>
 </div>
 
 </div>

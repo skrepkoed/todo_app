@@ -8,7 +8,7 @@
 <% v.each do |item|  %>
 
 <div id=<%=item.id%> class="todolist1 <%= item.color%>">
-
+<%= button_tag '', value: item.id,  class: "icon-checkmark"  %>
 
 <p><%= item.title%>  </p>
 <p><%= item.description %></p>

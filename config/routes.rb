@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   	get :color_picker
   end
 end
+
+resource :collections do
+
+	end
   get 'todoitems/new'
   
 end

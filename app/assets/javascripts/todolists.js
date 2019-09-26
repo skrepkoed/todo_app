@@ -1,8 +1,8 @@
 
 
 $(document).ready(function(){
-let checked=[]
-sessionStorage.setItem('checked', checked);
+let items=[]
+
 
 $("#list").on( "click", function(event){
 
@@ -23,29 +23,34 @@ $(document).on('click', '.icon-checkmark', function(event){
 	event.preventDefault()
 	event.stopPropagation();
 	let check= $(event.target).attr('value')
-	let data = sessionStorage.getItem(checked)
+	let index = items.indexOf(check)
 console.log($(event.target).attr('value'));
-console.log( sessionStorage)
-console.log(checked)
-if(checked.includes(check)){
- checked.splice(checked.indexOf(check))
- data.splice(checked.indexOf(check))
 
-}else{checked.push(check)
-sessionStorage.setItem('checked', checked);}
+console.log(index)
+if (index!==-1){
+items.splice(index)
 
+}else{
+items.push(check)}
+console.log(items)
 })
-$('.icon-checkmark.collection').on('click', function(){
+$('.icon-checkmark.collection').on('click', function(event){
 
-	let value = $(this).attr('value')
+	let value = $(event.target).attr('value')
 	 
+	 
+  
 $.ajax({
-url : "/collections",
+
         type : "put",
-        data : { data_value: JSON.stringify(sessionStorage)}
+        url : "/collections",
+        dataType: 'json',
+        contentType: 'application/json',
+        data :   JSON.stringify({[value]:items}),
+        success: function(json) { }
 
 })
-
+/*!!*/
 
 })
 /* think about pin later*/

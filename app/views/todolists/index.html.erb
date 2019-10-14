@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <ul class="nav nav-pills">
   <li class="nav-item">
-  	<%= button_tag '',  value: 'done',  class: "icon-checkmark collection"  %>
-    
-  </li>
+<%= form_with  url: collections_path, method:'put' do %>
+<%= check_box_tag 'done', true%>
+<%= hidden_field_tag 'some_ids',  id: 'extra_ids' %>
+<div class='links'>
+<%= link_to  (tag.span '', class: %w( icon-pencil2 )), color_picker_todolists_path, remote:true, method: "get", class: "color_picker"  %>
+</div>
+<%= submit_tag "collection", id: 'collection' %>
+
+<%end%>
+</li>
+<li class="nav-item">
+<%= form_with  url: collections_path, method:'delete' do %>
+
+<%= hidden_field_tag 'some_ids_del',  id: 'extra_ids_del' %>
+<%= submit_tag "delete collection", id: 'del_collection' %>
+<%end%>
+</li>
+
   
 </ul>
 <div class ="container">

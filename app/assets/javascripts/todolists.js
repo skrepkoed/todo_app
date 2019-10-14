@@ -20,9 +20,8 @@ $('.spoiler').css('display','flex').fadeIn('slow');
 
 })
 $(document).on('click', '.icon-checkmark', function(event){
-	event.preventDefault()
-	event.stopPropagation();
-	let check= $(event.target).attr('value')
+	
+	let check= +$(event.target).attr('value')
 	let index = items.indexOf(check)
 console.log($(event.target).attr('value'));
 
@@ -33,26 +32,16 @@ items.splice(index)
 }else{
 items.push(check)}
 console.log(items)
+$(document).on('click', '#collection', function(event){
+$('#some_ids').val(items);
 })
-$('.icon-checkmark.collection').on('click', function(event){
 
-	let value = $(event.target).attr('value')
-	 
-	 
-  
-$.ajax({
-
-        type : "put",
-        url : "/collections",
-        dataType: 'json',
-        contentType: 'application/json',
-        data :   JSON.stringify({[value]:items}),
-        success: function(json) { }
-
+$(document).on('click', '#del_collection', function(event){
+$('#some_ids_del').val(items);
 })
-/*!!*/
-
+      
 })
+
 /* think about pin later*/
 
 pin()

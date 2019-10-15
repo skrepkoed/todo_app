@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <ul class="nav nav-pills">
   <li class="nav-item">
-<%= form_with  url: collections_path, method:'put' do %>
+<%= form_with  url: collections_path, data: {'js-update-form' => true}, method:'put' do %>
 <%= check_box_tag 'done', true%>
 <%= hidden_field_tag 'some_ids',  id: 'extra_ids' %>
 <div class='links'>
@@ -12,7 +12,7 @@
 <%end%>
 </li>
 <li class="nav-item">
-<%= form_with  url: collections_path, method:'delete' do %>
+<%= form_with  url: collections_path, data: {'js-update-form' => true}, method:'delete' do %>
 
 <%= hidden_field_tag 'some_ids_del',  id: 'extra_ids_del' %>
 <%= submit_tag "delete collection", id: 'del_collection' %>

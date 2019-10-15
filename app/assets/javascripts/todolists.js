@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-let items=[]
+var items=[]
 
 
 $("#list").on( "click", function(event){
@@ -32,14 +32,17 @@ items.splice(index)
 }else{
 items.push(check)}
 console.log(items)
+      
+})
 $(document).on('click', '#collection', function(event){
 $('#some_ids').val(items);
+
 })
 
 $(document).on('click', '#del_collection', function(event){
 $('#some_ids_del').val(items);
-})
-      
+items=[]
+
 })
 
 /* think about pin later*/
